@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -32,9 +33,9 @@ public class HotelController {
     private ResponseEntity<List<HotelProfile>> gatAllFiltered(@RequestParam (required = false) String name,
                                                               @RequestParam (required = false) String brand,
                                                               @RequestParam (required = false) String city,
-                                                              @RequestParam (required = false) String country,
+                                                              @RequestParam (required = false) String county,
                                                               @RequestParam (required = false) List<String> amenities) {
-        return new ResponseEntity<>(hotelManagerService.getAllFiltered(name,brand,city,country,amenities),HttpStatusCode.valueOf(200));
+        return new ResponseEntity<>(hotelManagerService.getAllFiltered(name,brand,city,county,amenities),HttpStatusCode.valueOf(200));
     }
 
     @PostMapping("/hotels")
@@ -47,5 +48,10 @@ public class HotelController {
                                                 @RequestBody List<String> amenities){
         hotelManagerService.addAmenitiesToHotel(id,amenities);
         return new ResponseEntity<>("OK",HttpStatusCode.valueOf(200));
+    }
+
+    @GetMapping("/histogram/{param}")
+    private ResponseEntity<HashMap<String,Long>> groupByParam(@PathVariable String param){
+        return new ResponseEntity(hotelManagerService.groupByParam(param),HttpStatusCode.valueOf(200));
     }
 }

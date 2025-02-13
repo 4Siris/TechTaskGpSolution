@@ -1,9 +1,6 @@
 package org.example.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,11 +22,12 @@ public class Hotel {
     private String name;
     private String description;
     private String brand;
-    @JdbcTypeCode(SqlTypes.JSON)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Address address;
     @JdbcTypeCode(SqlTypes.JSON)
     private Contacts contacts;
     @JdbcTypeCode(SqlTypes.JSON)
     private ArrivalTime arrivalTime;
+    @ElementCollection
     private List<String> amenities;
 }

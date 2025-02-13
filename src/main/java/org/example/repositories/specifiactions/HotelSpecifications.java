@@ -10,6 +10,14 @@ import org.springframework.data.jpa.domain.Specification;
 import java.util.List;
 
 public class HotelSpecifications {
+    public static Specification<Hotel> all(){
+        return new Specification<Hotel>() {
+            @Override
+            public Predicate toPredicate(Root<Hotel> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+                return criteriaBuilder.equal(root.get("id"),root.get("id"));
+            }
+        };
+    }
     public static Specification<Hotel> equalName (String hotelName){
         return new Specification<Hotel>() {
             @Override
@@ -30,9 +38,8 @@ public class HotelSpecifications {
         return new Specification<Hotel>() {
             @Override
             public Predicate toPredicate(Root<Hotel> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-                return criteriaBuilder.equal(
-                        criteriaBuilder.function("jsonb_extract_path_text",String.class,
-                        root.get("address"),criteriaBuilder.literal("city")),hotelCity);
+                return criteriaBuilder.equal(root.get("address").get("city"),
+                        criteriaBuilder.literal(hotelCity));
             }
         };
     }
@@ -40,9 +47,8 @@ public class HotelSpecifications {
         return new Specification<Hotel>() {
             @Override
             public Predicate toPredicate(Root<Hotel> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-                return criteriaBuilder.equal(
-                        criteriaBuilder.function("jsonb_extract_path_text",String.class,
-                        root.get("address"),criteriaBuilder.literal("county")),hotelCounty);
+                return criteriaBuilder.equal(root.get("address").get("county"),
+                        criteriaBuilder.literal(hotelCounty));
             }
         };
     }
@@ -50,7 +56,10 @@ public class HotelSpecifications {
         return new Specification<Hotel>() {
             @Override
             public Predicate toPredicate(Root<Hotel> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-                return root.get("amenities").in(hotelAmenities);
+                Predicate[] predicates = hotelAmenities.stream()
+                        .map(amenity -> criteriaBuilder.isMember(amenity, root.get("amenities")))
+                        .toArray(Predicate[]::new);
+                return criteriaBuilder.and(predicates);
             }
         };
     }
