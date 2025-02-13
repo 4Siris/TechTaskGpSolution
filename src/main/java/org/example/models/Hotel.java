@@ -22,7 +22,7 @@ public class Hotel {
     private String name;
     private String description;
     private String brand;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Address address;
     @JdbcTypeCode(SqlTypes.JSON)
     private Contacts contacts;

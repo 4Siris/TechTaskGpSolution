@@ -71,11 +71,8 @@ public class HotelManagerService {
     }
 
     public HashMap<String, Long> groupByParam(String param){
-        switch (param){
-            case "city", "county":{
-                param = "address."+param;
-                break;
-            }
+        if(param.equals("city")||param.equals("county")){
+            param = "address."+param;
         }
         List list = groupByRepository.groupByParam(param);
         HashMap <String, Long> result = new HashMap<>();
