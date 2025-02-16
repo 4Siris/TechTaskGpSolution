@@ -4,17 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62241a4a-e983-489f-b049-62adfec3d285" name="Changes" comment="feat: add basic hotel logic">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/CountResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/AddressProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repositories/GroupByRepository.java" afterDir="false" />
+    <list default="true" id="62241a4a-e983-489f-b049-62adfec3d285" name="Changes" comment="feat: update basic logic">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/configs/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/CreateAddressDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/CreateHotelDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/repositories/HotelRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/services/HotelManagerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/HotelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/ArrivalTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/ArrivalTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Contacts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/CountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/CountResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/AddressProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/AddressProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfileDetailed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfileDetailed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repositories/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repositories/HotelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repositories/specifiactions/HotelSpecifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repositories/specifiactions/HotelSpecifications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HotelManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HotelManagerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -27,6 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -58,19 +67,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.HotelManagerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelManagerServiceTest.getAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelManagerServiceTest.save.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelRepositoryTest.findAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelRepositoryTest.findByIds.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechTaskGpSolution [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechTaskGpSolution [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechTaskGpSolution [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechTaskGpSolution [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechTaskGpSolution [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechTaskGpSolution [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;A:/Utils/Java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.repositories" />
+      <recent name="org.example.services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="TechTaskGpSolution" />
@@ -84,9 +122,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HotelManagerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTaskGpSolution" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.services" />
+      <option name="MAIN_CLASS_NAME" value="org.example.services.HotelManagerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelManagerServiceTest.getAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTaskGpSolution" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.services" />
+      <option name="MAIN_CLASS_NAME" value="org.example.services.HotelManagerServiceTest" />
+      <option name="METHOD_NAME" value="getAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTaskGpSolution" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.repositories" />
+      <option name="MAIN_CLASS_NAME" value="org.example.repositories.HotelRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelRepositoryTest.findByIds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTaskGpSolution" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.repositories" />
+      <option name="MAIN_CLASS_NAME" value="org.example.repositories.HotelRepositoryTest" />
+      <option name="METHOD_NAME" value="findByIds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.HotelRepositoryTest.findByIds" />
+        <item itemvalue="JUnit.HotelRepositoryTest" />
+        <item itemvalue="JUnit.HotelManagerServiceTest" />
+        <item itemvalue="JUnit.HotelManagerServiceTest.getAll" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739289746028</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: update basic logic, add histogram logic">
+      <option name="closed" value="true" />
+      <created>1739463055902</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739463055902</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: update basic logic">
+      <option name="closed" value="true" />
+      <created>1739463564161</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739463564162</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,14 +264,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="feat: add basic hotel logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add basic hotel logic" />
+    <MESSAGE value="feat: update basic logic, add histogram logic" />
+    <MESSAGE value="feat: update basic logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update basic logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/services/HotelManagerService.java</url>
-          <line>40</line>
+          <line>42</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
