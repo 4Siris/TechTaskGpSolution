@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62241a4a-e983-489f-b049-62adfec3d285" name="Changes" comment="feat: update basic logic">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/configs/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/CreateAddressDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/CreateHotelDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/repositories/HotelRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/services/HotelManagerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/HotelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/ArrivalTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/ArrivalTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Contacts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/CountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/CountResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/AddressProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/AddressProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfileDetailed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/dtos/HotelProfileDetailed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HotelManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HotelManagerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="62241a4a-e983-489f-b049-62adfec3d285" name="Changes" comment="feat: update basic logic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
