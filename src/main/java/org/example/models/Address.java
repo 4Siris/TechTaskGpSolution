@@ -1,5 +1,6 @@
 package org.example.models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
+@Schema(description = "Entity адресса в базе данных")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

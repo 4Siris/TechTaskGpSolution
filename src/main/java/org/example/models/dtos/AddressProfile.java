@@ -1,5 +1,6 @@
 package org.example.models.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +11,7 @@ import org.example.models.Address;
 @NoArgsConstructor
 @Data
 @Builder
+@Schema(description = "Dto адреса который отправляет система")
 public class AddressProfile {
     private Integer houseNumber;
     private String street;

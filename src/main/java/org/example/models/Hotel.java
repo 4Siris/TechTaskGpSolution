@@ -1,5 +1,6 @@
 package org.example.models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +16,7 @@ import java.util.List;
 @Data
 @Entity
 @Builder
+@Schema(description = "Entity отеля для хранения в базе данных")
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

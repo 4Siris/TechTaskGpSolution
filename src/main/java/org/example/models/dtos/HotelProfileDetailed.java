@@ -1,5 +1,6 @@
 package org.example.models.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
+@Schema(description = "Dto отеля который отправляет система")
 public class HotelProfileDetailed {
     private long id;
     private String name;
