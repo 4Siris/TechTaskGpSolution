@@ -1,7 +1,9 @@
 package org.example.services;
 
+import org.example.models.Address;
 import org.example.models.CountResponse;
 import org.example.models.Hotel;
+import org.example.models.dtos.CreateHotelDto;
 import org.example.models.dtos.HotelProfile;
 import org.example.models.dtos.HotelProfileDetailed;
 import org.example.repositories.GroupByRepository;
@@ -51,9 +53,22 @@ public class HotelManagerService {
         return returnList;
     }
 
-    public HotelProfile save (Hotel newHotel){
+    public HotelProfile save (CreateHotelDto newHotel){
+        Hotel hotel = Hotel.builder()
+                .name(newHotel.getName())
+                .description(newHotel.getDescription())
+                .brand(newHotel.getBrand())
+                .address(Address.builder()
+                        .houseNumber(newHotel.getAddress().getHouseNumber())
+                        .street(newHotel.getAddress().getStreet())
+                        .city(newHotel.getAddress().getCity())
+                        .county(newHotel.getAddress().getCounty())
+                        .postCode(newHotel.getAddress().getPostCode())
+                        .build())
+                .contacts(newHotel.getContacts())
+                .arrivalTime(newHotel.getArrivalTime()).build();
         return HotelProfile.toHotelProfile(
-                hotelService.save(newHotel));
+                hotelService.save(hotel));
     }
 
     public void addAmenitiesToHotel(long id, List<String> addAmenities){

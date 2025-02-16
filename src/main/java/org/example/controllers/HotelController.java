@@ -1,9 +1,9 @@
 package org.example.controllers;
 
-import org.example.models.Hotel;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.example.models.dtos.CreateHotelDto;
 import org.example.models.dtos.HotelProfile;
 import org.example.models.dtos.HotelProfileDetailed;
 import org.example.services.HotelManagerService;
@@ -59,7 +59,7 @@ public class HotelController {
             description = "Получает объект типа Hotel, сохраняет его и возвращает его простой профиль"
     )
     @PostMapping("/hotels")
-    private ResponseEntity<HotelProfile> save(@RequestBody Hotel newHotel){
+    private ResponseEntity<HotelProfile> save(@RequestBody CreateHotelDto newHotel){
         return new ResponseEntity<>(hotelManagerService.save(newHotel),HttpStatusCode.valueOf(200));
     }
 
